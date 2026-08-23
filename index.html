@@ -3,309 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>املاک صداقت | فایل‌های ملکی جلال</title>
+<title>املاک صداقت | منطقه جلال</title>
 
 <style>
 *{box-sizing:border-box}
-
-body{
-margin:0;
-font-family:Tahoma,Arial,sans-serif;
-background:#f3f5f7;
-color:#222
-}
-
-header{
-background:linear-gradient(135deg,#102f46,#20639b);
-color:#fff;
-text-align:center;
-padding:30px 15px
-}
-
-header h1{
-margin:0 0 8px;
-font-size:29px
-}
-
-header p{
-margin:0;
-font-size:14px;
-opacity:.95
-}
-
-.headerNote{
-margin:14px auto 0;
-max-width:550px;
-font-size:12px;
-line-height:1.9;
-opacity:.9
-}
-
-.container{
-max-width:780px;
-margin:auto;
-padding:15px
-}
-
-.card{
-background:#fff;
-border-radius:18px;
-padding:18px;
-margin-bottom:15px;
-box-shadow:0 3px 15px #0001
-}
-
-h2{
-font-size:19px;
-margin-top:0;
-color:#173f5f
-}
-
-.choice,
-.cat{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px
-}
-
-.choice button,
-.cat button{
-border:0;
-border-radius:13px;
-padding:15px 8px;
-font-family:inherit;
-font-size:14px;
-cursor:pointer;
-background:#eef4f8;
-color:#173f5f
-}
-
-.choice button:hover,
-.cat button:hover{
-background:#dcecf7
-}
-
-.choice .active,
-.cat .active{
-background:#20639b;
-color:#fff
-}
-
-.filter{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:9px
-}
-
-.filter input,
-.filter select{
-width:100%;
-padding:12px;
-border:1px solid #ddd;
-border-radius:10px;
-font-family:inherit;
-font-size:13px;
-background:#fff
-}
-
-.full{
-grid-column:1/-1
-}
-
-.searchBtn{
-background:#20639b!important;
-color:#fff!important;
-font-weight:bold
-}
-
-.clearBtn{
-background:#eef4f8!important;
-color:#173f5f!important
-}
-
-.resultsTop{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-margin-bottom:12px
-}
-
-.resultsTitle{
-font-weight:bold;
-color:#173f5f
-}
-
-.property{
-border:1px solid #e1e6ea;
-border-radius:16px;
-overflow:hidden;
-margin:14px 0;
-background:#fff
-}
-
-.property img{
-width:100%;
-height:245px;
-object-fit:cover;
-display:block;
-background:#eee
-}
-
-.propertyBody{
-padding:15px
-}
-
-.property h3{
-margin:0 0 9px;
-color:#173f5f;
-font-size:18px
-}
-
-.badge{
-display:inline-block;
-background:#eef4f8;
-color:#20639b;
-padding:5px 8px;
-border-radius:8px;
-font-size:11px;
-margin:2px
-}
-
-.propertyInfo{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:6px;
-margin:12px 0
-}
-
-.info{
-background:#f7f9fa;
-border-radius:9px;
-padding:8px;
-font-size:12px;
-line-height:1.6
-}
-
-.property p{
-font-size:13px;
-line-height:1.9;
-margin:7px 0
-}
-
-.price{
-font-size:17px!important;
-font-weight:bold;
-color:#d35400
-}
-
-.buttons{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:8px;
-margin-top:12px
-}
-
-.contactBtn,
-.shareBtn{
-display:block;
-text-align:center;
-text-decoration:none;
-padding:12px;
-border-radius:10px;
-font-family:inherit;
-font-size:13px;
-cursor:pointer
-}
-
-.contactBtn{
-background:#20639b;
-color:#fff
-}
-
-.shareBtn{
-background:#eef4f8;
-color:#173f5f;
-border:0
-}
-
-.empty{
-text-align:center;
-background:#fff7e6;
-padding:16px;
-border-radius:12px;
-font-size:13px;
-line-height:1.9
-}
-
-.request input,
-.request textarea{
-width:100%;
-padding:12px;
-border:1px solid #ddd;
-border-radius:10px;
-font-family:inherit;
-font-size:13px;
-margin-bottom:8px
-}
-
-.request textarea{
-height:90px;
-resize:none
-}
-
-.request button{
-width:100%;
-padding:13px;
-border:0;
-border-radius:10px;
-background:#20639b;
-color:#fff;
-font-family:inherit;
-font-size:14px
-}
-
-.note{
-font-size:11px;
-color:#777;
-line-height:1.9;
-margin-top:10px
-}
-
-.phoneBox{
-text-align:center;
-background:#eef7fb;
-padding:15px;
-border-radius:12px;
-margin-top:10px
-}
-
-.phoneBox a{
-color:#173f5f;
-font-size:19px;
-font-weight:bold;
-text-decoration:none
-}
-
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f3f5f7;color:#222}
+header{background:linear-gradient(135deg,#102f46,#20639b);color:#fff;text-align:center;padding:30px 15px}
+header h1{margin:0 0 8px;font-size:29px}
+header p{margin:0;font-size:14px}
+.headerNote{margin:12px auto 0;max-width:600px;font-size:12px;line-height:1.9;opacity:.9}
+.container{max-width:780px;margin:auto;padding:15px}
+.card{background:#fff;border-radius:18px;padding:18px;margin-bottom:15px;box-shadow:0 3px 15px #0001}
+h2{font-size:19px;margin-top:0;color:#173f5f}
+.choice,.cat{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choice button,.cat button{border:0;border-radius:13px;padding:15px 8px;font-family:inherit;font-size:14px;cursor:pointer;background:#eef4f8;color:#173f5f}
+.choice .active,.cat .active{background:#20639b;color:#fff}
+.filter{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.filter input,.filter select{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;font-family:inherit;font-size:13px;background:#fff}
+.full{grid-column:1/-1}
+.searchBtn{background:#20639b!important;color:#fff!important;font-weight:bold}
+.clearBtn{background:#eef4f8!important;color:#173f5f!important}
+.resultsTop{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.resultsTitle{font-weight:bold;color:#173f5f}
+.property{border:1px solid #e1e6ea;border-radius:16px;overflow:hidden;margin:14px 0;background:#fff}
+.property img{width:100%;height:245px;object-fit:cover;display:block;background:#eee}
+.propertyBody{padding:15px}
+.property h3{margin:0 0 9px;color:#173f5f;font-size:18px}
+.badge{display:inline-block;background:#eef4f8;color:#20639b;padding:5px 8px;border-radius:8px;font-size:11px;margin:2px}
+.propertyInfo{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:12px 0}
+.info{background:#f7f9fa;border-radius:9px;padding:8px;font-size:12px;line-height:1.6}
+.property p{font-size:13px;line-height:1.9;margin:7px 0}
+.price{font-size:17px!important;font-weight:bold;color:#d35400}
+.buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.contactBtn,.shareBtn{display:block;text-align:center;text-decoration:none;padding:12px;border-radius:10px;font-family:inherit;font-size:13px;cursor:pointer}
+.contactBtn{background:#20639b;color:#fff}
+.shareBtn{background:#eef4f8;color:#173f5f;border:0}
+.empty{text-align:center;background:#fff7e6;padding:16px;border-radius:12px;font-size:13px;line-height:1.9}
+.request input,.request textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;font-family:inherit;font-size:13px;margin-bottom:8px}
+.request textarea{height:90px;resize:none}
+.request button{width:100%;padding:13px;border:0;border-radius:10px;background:#20639b;color:#fff;font-family:inherit;font-size:14px}
+.phoneBox{text-align:center;background:#eef7fb;padding:15px;border-radius:12px;margin-top:10px}
+.phoneBox a{color:#173f5f;font-size:19px;font-weight:bold;text-decoration:none}
+.note{font-size:11px;color:#777;line-height:1.9;margin-top:10px}
 @media(max-width:500px){
-
-.choice,
-.cat,
-.filter,
-.propertyInfo,
-.buttons{
-grid-template-columns:1fr
-}
-
-.property img{
-height:220px
-}
-
-.resultsTop{
-align-items:flex-start;
-flex-direction:column
-}
-
+.choice,.cat,.filter,.propertyInfo,.buttons{grid-template-columns:1fr}
+.property img{height:220px}
+.resultsTop{align-items:flex-start;flex-direction:column}
 }
 </style>
 </head>
@@ -313,73 +56,34 @@ flex-direction:column
 <body>
 
 <header>
-
 <h1>🏠 املاک صداقت</h1>
-
 <p>فایل‌های خرید، فروش، رهن و اجاره | منطقه جلال</p>
-
 <div class="headerNote">
-فایل‌های ملکی را جست‌وجو کنید و ملک مناسب خود را سریع‌تر پیدا کنید.
+جست‌وجوی سریع فایل‌های ملکی و مشاهده مشخصات و تصاویر املاک
 </div>
-
 </header>
 
 <div class="container">
 
-<!-- معامله -->
-
 <div class="card">
-
 <h2>۱. نوع معامله</h2>
-
 <div class="choice">
-
-<button onclick="setTransaction('فروش',this)">
-🏠 خرید / فروش
-</button>
-
-<button onclick="setTransaction('رهن و اجاره',this)">
-🔑 رهن / اجاره
-</button>
-
+<button onclick="setTransaction('فروش',this)">🏠 خرید / فروش</button>
+<button onclick="setTransaction('رهن و اجاره',this)">🔑 رهن / اجاره</button>
 </div>
-
 </div>
-
-
-<!-- نوع ملک -->
 
 <div class="card">
-
 <h2>۲. نوع ملک</h2>
-
 <div class="cat">
-
-<button onclick="setCategory('آپارتمان',this)">
-🏢 آپارتمان
-</button>
-
-<button onclick="setCategory('خانه',this)">
-🏠 خانه / ویلایی
-</button>
-
-<button onclick="setCategory('زمین',this)">
-🌳 زمین
-</button>
-
-<button onclick="setCategory('مغازه',this)">
-🏪 مغازه
-</button>
-
+<button onclick="setCategory('آپارتمان',this)">🏢 آپارتمان</button>
+<button onclick="setCategory('خانه',this)">🏠 خانه / ویلایی</button>
+<button onclick="setCategory('زمین',this)">🌳 زمین</button>
+<button onclick="setCategory('مغازه',this)">🏪 مغازه</button>
 </div>
-
 </div>
-
-
-<!-- فیلتر -->
 
 <div class="card">
-
 <h2>۳. مشخصات موردنظر</h2>
 
 <div class="filter">
@@ -392,20 +96,9 @@ flex-direction:column
 <option value="4">۴ خواب</option>
 </select>
 
-<input
-id="areaMin"
-type="number"
-placeholder="حداقل متراژ">
-
-<input
-id="areaMax"
-type="number"
-placeholder="حداکثر متراژ">
-
-<input
-id="priceMax"
-type="number"
-placeholder="حداکثر قیمت (میلیارد)">
+<input id="areaMin" type="number" placeholder="حداقل متراژ">
+<input id="areaMax" type="number" placeholder="حداکثر متراژ">
+<input id="priceMax" type="number" placeholder="حداکثر قیمت (میلیارد)">
 
 <select id="parking">
 <option value="">پارکینگ</option>
@@ -419,103 +112,59 @@ placeholder="حداکثر قیمت (میلیارد)">
 <option value="no">بدون آسانسور</option>
 </select>
 
-<input
-class="full"
-id="searchText"
-placeholder="مثلاً بازسازی شده، خوش‌نقشه، نزدیک مدرسه...">
+<input class="full" id="searchText" placeholder="مثلاً بازسازی شده، خوش‌نقشه، نزدیک مدرسه...">
 
-<button
-class="searchBtn full"
-onclick="searchProperties()">
-🔎 جست‌وجوی ملک
-</button>
-
-<button
-class="clearBtn full"
-onclick="clearFilters()">
-🔄 پاک کردن فیلترها
-</button>
+<button class="searchBtn full" onclick="searchProperties()">🔎 جست‌وجوی ملک</button>
+<button class="clearBtn full" onclick="clearFilters()">🔄 پاک کردن فیلترها</button>
 
 </div>
-
 </div>
-
-
-<!-- نتایج -->
 
 <div class="card">
 
 <div class="resultsTop">
-
-<div class="resultsTitle">
-🏠 فایل‌های موجود
-</div>
-
+<div class="resultsTitle">🏠 فایل‌های موجود</div>
 <div id="count"></div>
-
 </div>
 
 <div id="results"></div>
 
 </div>
 
-
-<!-- درخواست -->
-
 <div class="card request">
 
 <h2>📋 ملک موردنظرتان را پیدا نکردید؟</h2>
 
 <p style="font-size:13px;line-height:1.9">
-
 مشخصات ملک موردنظر خود را ارسال کنید تا املاک صداقت بتواند فایل‌های مناسب را بررسی کند.
-
 </p>
 
-<input
-id="customerName"
-placeholder="نام و نام خانوادگی">
+<input id="customerName" placeholder="نام و نام خانوادگی">
+<input id="customerPhone" placeholder="شماره تماس">
 
-<input
-id="customerPhone"
-placeholder="شماره تماس">
+<textarea id="customerRequest" placeholder="مثلاً آپارتمان دوخوابه، حدود ۱۰۰ متر، تا ۵ میلیارد"></textarea>
 
-<textarea
-id="customerRequest"
-placeholder="مثلاً آپارتمان دوخوابه، حدود ۱۰۰ متر، تا ۵ میلیارد">
-</textarea>
-
-<button onclick="submitRequest()">
-📩 ثبت درخواست
-</button>
+<button onclick="submitRequest()">📩 ثبت درخواست</button>
 
 <div id="requestResult"></div>
 
 </div>
-
-
-<!-- تماس -->
 
 <div class="card">
 
 <h2>📞 تماس با املاک صداقت</h2>
 
 <p style="font-size:13px;line-height:1.9">
-برای دریافت اطلاعات بیشتر درباره هر ملک با املاک صداقت تماس بگیرید.
+برای دریافت اطلاعات بیشتر درباره فایل‌ها با املاک صداقت تماس بگیرید.
 </p>
 
 <div class="phoneBox">
-
-<a href="tel:09120000000">
-📞 ۰۹۱۲ ۰۰۰ ۰۰۰۰
-</a>
-
+<a href="tel:09120000000">📞 ۰۹۱۲ ۰۰۰ ۰۰۰۰</a>
 </div>
 
 </div>
 
 </div>
-
 
 <script>
 
@@ -525,19 +174,13 @@ let category="";
 
 const PHONE="09120000000";
 
-
-/* دریافت ملک‌ها */
-
 async function loadProperties(){
 
 try{
 
-const response=await fetch(
-"properties.json?v="+Date.now()
-);
+const response=await fetch("properties.json?v="+Date.now());
 
-if(!response.ok)
-throw new Error();
+if(!response.ok) throw new Error();
 
 properties=await response.json();
 
@@ -546,27 +189,17 @@ showResults(properties);
 }catch(error){
 
 document.getElementById("results").innerHTML=
-`
-<div class="empty">
-❌ فایل اطلاعات املاک پیدا نشد.
-<br>
-لطفاً فایل properties.json را بررسی کنید.
-</div>
-`;
+'<div class="empty">❌ فایل properties.json پیدا نشد.</div>';
 
 }
 
 }
-
-
-/* معامله */
 
 function setTransaction(value,button){
 
 transaction=value;
 
-document
-.querySelectorAll(".choice button")
+document.querySelectorAll(".choice button")
 .forEach(b=>b.classList.remove("active"));
 
 button.classList.add("active");
@@ -574,16 +207,12 @@ button.classList.add("active");
 searchProperties();
 
 }
-
-
-/* نوع ملک */
 
 function setCategory(value,button){
 
 category=value;
 
-document
-.querySelectorAll(".cat button")
+document.querySelectorAll(".cat button")
 .forEach(b=>b.classList.remove("active"));
 
 button.classList.add("active");
@@ -592,147 +221,52 @@ searchProperties();
 
 }
 
-
-/* جست‌وجو */
-
 function searchProperties(){
 
 let result=[...properties];
 
+if(transaction)
+result=result.filter(p=>p.transaction===transaction);
 
-/* معامله */
+if(category)
+result=result.filter(p=>p.type===category);
 
-if(transaction){
+let rooms=document.getElementById("rooms").value;
 
-result=result.filter(
-p=>p.transaction===transaction
-);
+if(rooms)
+result=result.filter(p=>Number(p.rooms)===Number(rooms));
 
-}
+let minArea=Number(document.getElementById("areaMin").value||0);
+let maxArea=Number(document.getElementById("areaMax").value||0);
 
+if(minArea)
+result=result.filter(p=>Number(p.area)>=minArea);
 
-/* نوع ملک */
+if(maxArea)
+result=result.filter(p=>Number(p.area)<=maxArea);
 
-if(category){
+let maxPrice=Number(document.getElementById("priceMax").value||0);
 
-result=result.filter(
-p=>p.type===category
-);
+if(maxPrice)
+result=result.filter(p=>Number(p.priceValue)<=maxPrice*1000000000);
 
-}
+let parking=document.getElementById("parking").value;
 
+if(parking==="yes")
+result=result.filter(p=>p.parking===true);
 
-/* خواب */
+if(parking==="no")
+result=result.filter(p=>p.parking===false);
 
-let rooms=
-document.getElementById("rooms").value;
+let elevator=document.getElementById("elevator").value;
 
-if(rooms){
+if(elevator==="yes")
+result=result.filter(p=>p.elevator===true);
 
-result=result.filter(
-p=>Number(p.rooms)===Number(rooms)
-);
+if(elevator==="no")
+result=result.filter(p=>p.elevator===false);
 
-}
-
-
-/* متراژ */
-
-let minArea=
-Number(
-document.getElementById("areaMin").value||0
-);
-
-let maxArea=
-Number(
-document.getElementById("areaMax").value||0
-);
-
-if(minArea){
-
-result=result.filter(
-p=>Number(p.area)>=minArea
-);
-
-}
-
-if(maxArea){
-
-result=result.filter(
-p=>Number(p.area)<=maxArea
-);
-
-}
-
-
-/* قیمت */
-
-let maxPrice=
-Number(
-document.getElementById("priceMax").value||0
-);
-
-if(maxPrice){
-
-result=result.filter(
-p=>Number(p.priceValue)<=
-maxPrice*1000000000
-);
-
-}
-
-
-/* پارکینگ */
-
-let parking=
-document.getElementById("parking").value;
-
-if(parking==="yes"){
-
-result=result.filter(
-p=>p.parking===true
-);
-
-}
-
-if(parking==="no"){
-
-result=result.filter(
-p=>p.parking===false
-);
-
-}
-
-
-/* آسانسور */
-
-let elevator=
-document.getElementById("elevator").value;
-
-if(elevator==="yes"){
-
-result=result.filter(
-p=>p.elevator===true
-);
-
-}
-
-if(elevator==="no"){
-
-result=result.filter(
-p=>p.elevator===false
-);
-
-}
-
-
-/* جست‌وجوی متنی */
-
-let text=
-document.getElementById("searchText")
-.value
-.toLowerCase()
-.trim();
+let text=document.getElementById("searchText").value.toLowerCase().trim();
 
 if(text){
 
@@ -744,70 +278,41 @@ let all=(
 (p.title||"")+" "+
 (p.description||"")+" "+
 (p.location||"")+" "+
-(p.buildingAge||"")
+(p.buildingAge||"")+" "+
+(p.age||"")
 ).toLowerCase();
 
-return words.some(
-word=>all.includes(word)
-);
+return words.some(word=>all.includes(word));
 
 });
 
 }
 
-
 showResults(result);
 
 }
 
-
-/* نمایش */
-
 function showResults(result){
 
-const box=
-document.getElementById("results");
+const box=document.getElementById("results");
+const count=document.getElementById("count");
 
-const count=
-document.getElementById("count");
-
-count.innerHTML=
-`<span class="badge">${result.length} فایل</span>`;
-
+count.innerHTML='<span class="badge">'+result.length+' فایل</span>';
 
 if(!result.length){
 
 box.innerHTML=
-`
-<div class="empty">
-
-🔎 ملکی با این مشخصات پیدا نشد.
-
-<br><br>
-
-مشخصات را کمی تغییر دهید یا درخواست خود را ثبت کنید.
-
-</div>
-`;
+'<div class="empty">🔎 ملکی با این مشخصات پیدا نشد.<br><br>مشخصات را کمی تغییر دهید یا درخواست خود را ثبت کنید.</div>';
 
 return;
 
 }
 
-
 box.innerHTML=result.map(p=>{
 
-let age=
-p.buildingAge||
-p.age||
-"";
-
-let floor=
-p.floor||
-"";
-
-let rooms=
-Number(p.rooms||0);
+let age=p.buildingAge||p.age||"";
+let floor=p.floor||"";
+let rooms=Number(p.rooms||0);
 
 return `
 
@@ -822,77 +327,46 @@ onerror="this.src='https://placehold.co/800x500?text=Amlak+Sedaghat'">
 
 <h3>${p.title||"ملک"}</h3>
 
-<span class="badge">
-کد: ${p.id||"-"}
-</span>
-
-<span class="badge">
-${p.transaction||""}
-</span>
-
-<span class="badge">
-${p.type||""}
-</span>
-
-<span class="badge">
-📍 ${p.location||""}
-</span>
-
+<span class="badge">کد: ${p.id||"-"}</span>
+<span class="badge">${p.transaction||""}</span>
+<span class="badge">${p.type||""}</span>
+<span class="badge">📍 ${p.location||""}</span>
 
 <div class="propertyInfo">
 
 <div class="info">
-📐 متراژ
-<br>
+📐 متراژ<br>
 <strong>${p.area||"-"} متر</strong>
 </div>
 
-
 <div class="info">
-🛏 خواب
-<br>
+🛏 خواب<br>
 <strong>${rooms?rooms+" خواب":"اعلام نشده"}</strong>
 </div>
 
-
 <div class="info">
-🏢 طبقه
-<br>
+🏢 طبقه<br>
 <strong>${floor||"اعلام نشده"}</strong>
 </div>
 
-
 <div class="info">
-🏗 سن بنا
-<br>
+🏗 سن بنا<br>
 <strong>${age?age+" سال":"اعلام نشده"}</strong>
 </div>
 
 </div>
 
-
 <p>
-${p.parking
-?"🚗 پارکینگ دارد"
-:"🚗 بدون پارکینگ"}
-
+${p.parking?"🚗 پارکینگ دارد":"🚗 بدون پارکینگ"}
 &nbsp;&nbsp;
-
-${p.elevator
-?"🛗 آسانسور دارد"
-:"🛗 بدون آسانسور"}
+${p.elevator?"🛗 آسانسور دارد":"🛗 بدون آسانسور"}
 </p>
-
 
 <p class="price">
 💰 ${p.price||"تماس بگیرید"}
 </p>
 
-
-<p>
-${p.description||""}
-</p>
-
+<p>${p.description||""}</p>
 
 <div class="buttons">
 
@@ -911,7 +385,6 @@ onclick='shareProperty(${JSON.stringify(p)})'>
 </div>
 
 </div>
-
 </div>
 
 `;
@@ -920,13 +393,10 @@ onclick='shareProperty(${JSON.stringify(p)})'>
 
 }
 
-
-/* اشتراک‌گذاری */
-
 async function shareProperty(p){
 
 const text=
-`🏠 ${p.title}
+`🏠 ${p.title||"ملک"}
 📍 ${p.location||""}
 📐 ${p.area||""} متر
 💰 ${p.price||""}
@@ -939,7 +409,7 @@ if(navigator.share){
 try{
 
 await navigator.share({
-title:p.title,
+title:p.title||"ملک",
 text:text,
 url:location.href
 });
@@ -950,9 +420,7 @@ url:location.href
 
 try{
 
-await navigator.clipboard.writeText(
-text+"\\n"+location.href
-);
+await navigator.clipboard.writeText(text+"\n"+location.href);
 
 alert("اطلاعات ملک کپی شد.");
 
@@ -965,9 +433,6 @@ alert("امکان اشتراک‌گذاری در این دستگاه وجود ن
 }
 
 }
-
-
-/* پاک کردن فیلتر */
 
 function clearFilters(){
 
@@ -990,61 +455,33 @@ showResults(properties);
 
 }
 
-
-/* درخواست مشتری */
-
 function submitRequest(){
 
-let name=
-document.getElementById("customerName")
-.value.trim();
-
-let phone=
-document.getElementById("customerPhone")
-.value.trim();
-
-let request=
-document.getElementById("customerRequest")
-.value.trim();
-
+let name=document.getElementById("customerName").value.trim();
+let phone=document.getElementById("customerPhone").value.trim();
+let request=document.getElementById("customerRequest").value.trim();
 
 if(!name||!phone||!request){
 
 document.getElementById("requestResult").innerHTML=
-`
-<p style="color:#b00020;font-size:12px">
-لطفاً نام، شماره تماس و درخواست خود را وارد کنید.
-</p>
-`;
+'<p style="color:#b00020;font-size:12px">لطفاً نام، شماره تماس و درخواست خود را وارد کنید.</p>';
 
 return;
 
 }
 
-
 document.getElementById("requestResult").innerHTML=
 `
 <p style="color:#176b3a;font-size:13px;line-height:1.9">
-
 ✅ درخواست شما ثبت شد.
-
 <br>
-
 برای پیگیری با املاک صداقت تماس بگیرید:
-
 <br>
-
-<a href="tel:${PHONE}">
-📞 ۰۹۱۲ ۰۰۰ ۰۰۰۰
-</a>
-
+<a href="tel:${PHONE}">📞 ۰۹۱۲ ۰۰۰ ۰۰۰۰</a>
 </p>
 `;
 
 }
-
-
-/* شروع */
 
 loadProperties();
 
