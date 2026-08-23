@@ -1,1 +1,674 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>املاک صداقت | منطقه جلال</title>
 
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Tahoma,Arial,sans-serif;
+background:#f3f5f7;
+color:#222
+}
+header{
+background:linear-gradient(135deg,#173f5f,#20639b);
+color:#fff;
+text-align:center;
+padding:28px 15px
+}
+header h1{margin:0 0 8px;font-size:27px}
+header p{margin:0;font-size:14px}
+.container{max-width:760px;margin:auto;padding:15px}
+.card{
+background:#fff;
+border-radius:18px;
+padding:18px;
+margin-bottom:15px;
+box-shadow:0 3px 15px #0001
+}
+h2{font-size:19px;margin-top:0;color:#173f5f}
+.choice{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px
+}
+.choice button,.cat button,.filter button{
+border:0;
+border-radius:13px;
+padding:15px 8px;
+font-family:inherit;
+font-size:14px;
+cursor:pointer;
+background:#eef4f8;
+color:#173f5f
+}
+.choice button:hover,.cat button:hover,.filter button:hover{
+background:#dcecf7
+}
+.choice .active,.cat .active{
+background:#20639b;
+color:#fff
+}
+.cat{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px
+}
+.filter{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px
+}
+.filter input,.filter select{
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:10px;
+font-family:inherit;
+font-size:13px;
+background:#fff
+}
+.full{grid-column:1/-1}
+.searchBtn{
+background:#20639b!important;
+color:#fff!important
+}
+.resultsTitle{
+margin:18px 0 10px;
+font-weight:bold;
+color:#173f5f
+}
+.property{
+border:1px solid #e1e6ea;
+border-radius:15px;
+overflow:hidden;
+margin:12px 0;
+background:#fff
+}
+.property img{
+width:100%;
+height:230px;
+object-fit:cover;
+display:block
+}
+.propertyBody{padding:14px}
+.property h3{
+margin:0 0 9px;
+color:#173f5f;
+font-size:17px
+}
+.badge{
+display:inline-block;
+background:#eef4f8;
+color:#20639b;
+padding:5px 8px;
+border-radius:8px;
+font-size:11px;
+margin:2px
+}
+.property p{
+font-size:13px;
+line-height:1.8;
+margin:6px 0
+}
+.price{
+font-size:16px!important;
+font-weight:bold;
+color:#d35400
+}
+.contactBtn{
+display:block;
+text-align:center;
+background:#20639b;
+color:#fff;
+text-decoration:none;
+padding:11px;
+border-radius:10px;
+margin-top:10px
+}
+.empty{
+text-align:center;
+background:#fff7e6;
+padding:15px;
+border-radius:12px;
+font-size:13px;
+line-height:1.9
+}
+.request input,.request textarea{
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:10px;
+font-family:inherit;
+font-size:13px;
+margin-bottom:8px
+}
+.request textarea{height:90px;resize:none}
+.request button{
+width:100%;
+padding:13px;
+border:0;
+border-radius:10px;
+background:#20639b;
+color:#fff;
+font-family:inherit
+}
+.note{
+font-size:11px;
+color:#777;
+line-height:1.8;
+margin-top:10px
+}
+@media(max-width:500px){
+.choice,.cat,.filter{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🏠 املاک صداقت</h1>
+<p>مشاور املاک | منطقه جلال</p>
+</header>
+
+<div class="container">
+
+<!-- نوع معامله -->
+
+<div class="card">
+<h2>۱. چه نوع معامله‌ای می‌خواهید؟</h2>
+
+<div class="choice">
+<button id="saleBtn" onclick="setTransaction('فروش',this)">
+🏠 خرید / فروش
+</button>
+
+<button id="rentBtn" onclick="setTransaction('رهن و اجاره',this)">
+🔑 رهن / اجاره
+</button>
+</div>
+</div>
+
+
+<!-- نوع ملک -->
+
+<div class="card" id="categoryCard">
+<h2>۲. نوع ملک</h2>
+
+<div class="cat">
+
+<button onclick="setCategory('آپارتمان',this)">
+🏢 آپارتمان
+</button>
+
+<button onclick="setCategory('خانه',this)">
+🏠 خانه
+</button>
+
+<button onclick="setCategory('زمین',this)">
+🌳 زمین
+</button>
+
+<button onclick="setCategory('مغازه',this)">
+🏪 مغازه
+</button>
+
+</div>
+</div>
+
+
+<!-- فیلتر -->
+
+<div class="card">
+
+<h2>۳. مشخصات موردنظر</h2>
+
+<div class="filter">
+
+<select id="rooms">
+<option value="">تعداد خواب</option>
+<option value="1">۱ خواب</option>
+<option value="2">۲ خواب</option>
+<option value="3">۳ خواب</option>
+<option value="4">۴ خواب</option>
+</select>
+
+<input id="areaMin" type="number" placeholder="حداقل متراژ">
+
+<input id="areaMax" type="number" placeholder="حداکثر متراژ">
+
+<input id="priceMax" type="number" placeholder="حداکثر قیمت (میلیارد)">
+
+<select id="parking">
+<option value="">پارکینگ</option>
+<option value="yes">دارای پارکینگ</option>
+<option value="no">بدون پارکینگ</option>
+</select>
+
+<select id="elevator">
+<option value="">آسانسور</option>
+<option value="yes">دارای آسانسور</option>
+<option value="no">بدون آسانسور</option>
+</select>
+
+<input
+class="full"
+id="searchText"
+placeholder="جست‌وجوی بیشتر؛ مثلاً نزدیک مدرسه، خوش‌نقشه...">
+
+<button
+class="searchBtn full"
+onclick="searchProperties()">
+🔎 جست‌وجوی ملک
+</button>
+
+</div>
+</div>
+
+
+<!-- نتایج -->
+
+<div class="card">
+
+<div id="results"></div>
+
+</div>
+
+
+<!-- درخواست ملک -->
+
+<div class="card request">
+
+<h2>📋 ملک موردنظرتان را پیدا نکردید؟</h2>
+
+<p style="font-size:13px;line-height:1.8">
+مشخصات ملک موردنظر خود را ارسال کنید تا املاک صداقت بتواند فایل‌های مناسب را بررسی کند.
+</p>
+
+<input id="customerName" placeholder="نام و نام خانوادگی">
+
+<input id="customerPhone" placeholder="شماره تماس">
+
+<textarea
+id="customerRequest"
+placeholder="مثلاً آپارتمان دوخوابه، حدود ۱۰۰ متر، تا ۵ میلیارد"></textarea>
+
+<button onclick="submitRequest()">
+📩 ثبت درخواست
+</button>
+
+<div id="requestResult"></div>
+
+</div>
+
+
+<div class="card">
+
+<h2>📞 تماس با املاک صداقت</h2>
+
+<p style="font-size:13px;line-height:1.8">
+برای نسخه آزمایشی، شماره تماس هنوز وارد نشده است.
+</p>
+
+<div class="note">
+اطلاعات و تصاویر فایل‌های این نسخه نمونه آزمایشی هستند و قبل از استفاده تجاری باید با اطلاعات واقعی املاک جایگزین شوند.
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+let properties=[];
+let transaction="";
+let category="";
+
+
+/* دریافت اطلاعات ملک */
+
+async function loadProperties(){
+
+try{
+
+const response=await fetch(
+"properties.json?v="+Date.now()
+);
+
+if(!response.ok)
+throw new Error("properties.json پیدا نشد");
+
+properties=await response.json();
+
+}catch(error){
+
+document.getElementById("results").innerHTML=
+'<div class="empty">❌ فایل اطلاعات املاک پیدا نشد.</div>';
+
+}
+
+}
+
+
+/* انتخاب معامله */
+
+function setTransaction(value,button){
+
+transaction=value;
+
+document
+.querySelectorAll(".choice button")
+.forEach(b=>b.classList.remove("active"));
+
+button.classList.add("active");
+
+searchProperties();
+
+}
+
+
+/* انتخاب نوع ملک */
+
+function setCategory(value,button){
+
+category=value;
+
+document
+.querySelectorAll(".cat button")
+.forEach(b=>b.classList.remove("active"));
+
+button.classList.add("active");
+
+searchProperties();
+
+}
+
+
+/* جست‌وجو */
+
+function searchProperties(){
+
+let result=[...properties];
+
+if(transaction){
+
+result=result.filter(
+p=>p.transaction===transaction
+);
+
+}
+
+if(category){
+
+result=result.filter(
+p=>p.type===category
+);
+
+}
+
+
+/* خواب */
+
+let rooms=
+document.getElementById("rooms").value;
+
+if(rooms){
+
+result=result.filter(
+p=>Number(p.rooms)===Number(rooms)
+);
+
+}
+
+
+/* متراژ */
+
+let minArea=
+Number(document.getElementById("areaMin").value||0);
+
+let maxArea=
+Number(document.getElementById("areaMax").value||0);
+
+if(minArea){
+
+result=result.filter(
+p=>Number(p.area)>=minArea
+);
+
+}
+
+if(maxArea){
+
+result=result.filter(
+p=>Number(p.area)<=maxArea
+);
+
+}
+
+
+/* قیمت */
+
+let maxPrice=
+Number(document.getElementById("priceMax").value||0);
+
+if(maxPrice){
+
+result=result.filter(
+p=>Number(p.priceValue)<=
+maxPrice*1000000000
+);
+
+}
+
+
+/* پارکینگ */
+
+let parking=
+document.getElementById("parking").value;
+
+if(parking==="yes"){
+
+result=result.filter(
+p=>p.parking===true
+);
+
+}
+
+if(parking==="no"){
+
+result=result.filter(
+p=>p.parking===false
+);
+
+}
+
+
+/* آسانسور */
+
+let elevator=
+document.getElementById("elevator").value;
+
+if(elevator==="yes"){
+
+result=result.filter(
+p=>p.elevator===true
+);
+
+}
+
+if(elevator==="no"){
+
+result=result.filter(
+p=>p.elevator===false
+);
+
+}
+
+
+/* متن جست‌وجو */
+
+let text=
+document.getElementById("searchText").value
+.toLowerCase()
+.trim();
+
+if(text){
+
+let words=text.split(/\s+/);
+
+result=result.filter(p=>{
+
+let all=
+(
+p.title+" "+
+p.description+" "+
+p.location
+).toLowerCase();
+
+return words.some(
+word=>all.includes(word)
+);
+
+});
+
+}
+
+
+showResults(result);
+
+}
+
+
+/* نمایش نتایج */
+
+function showResults(result){
+
+let box=
+document.getElementById("results");
+
+if(!result.length){
+
+box.innerHTML=
+`
+<div class="empty">
+🔎 ملکی با این مشخصات پیدا نشد.
+<br><br>
+مشخصات را کمی تغییر دهید یا درخواست خود را ثبت کنید.
+</div>
+`;
+
+return;
+
+}
+
+
+box.innerHTML=
+`
+<div class="resultsTitle">
+🏠 ${result.length} فایل پیدا شد
+</div>
+`+
+result.map(p=>`
+
+<div class="property">
+
+<img
+src="${p.image}"
+alt="${p.title}"
+onerror="this.src='https://via.placeholder.com/800x500?text=Amlak+Sedaghat'">
+
+<div class="propertyBody">
+
+<h3>${p.title}</h3>
+
+<span class="badge">${p.transaction}</span>
+<span class="badge">${p.type}</span>
+<span class="badge">📍 ${p.location}</span>
+
+<p>📐 متراژ: ${p.area} متر</p>
+
+${
+p.rooms
+?
+`<p>🛏 تعداد خواب: ${p.rooms}</p>`
+:""
+}
+
+<p>
+${p.parking?"🚗 پارکینگ دارد":"🚗 بدون پارکینگ"}
+&nbsp;&nbsp;
+${p.elevator?"🛗 آسانسور دارد":"🛗 بدون آسانسور"}
+</p>
+
+<p class="price">
+💰 ${p.price}
+</p>
+
+<p>${p.description}</p>
+
+<a class="contactBtn"
+href="tel:${p.phone||''}">
+📞 تماس درباره این ملک
+</a>
+
+</div>
+</div>
+
+`).join("");
+
+}
+
+
+/* ثبت درخواست */
+
+function submitRequest(){
+
+let name=
+document.getElementById("customerName").value.trim();
+
+let phone=
+document.getElementById("customerPhone").value.trim();
+
+let request=
+document.getElementById("customerRequest").value.trim();
+
+if(!name||!phone||!request){
+
+document.getElementById("requestResult").innerHTML=
+'<p style="color:#b00020;font-size:12px">لطفاً نام، شماره تماس و درخواست خود را وارد کنید.</p>';
+
+return;
+
+}
+
+
+/*
+در این نسخه اطلاعات فقط پیام موفقیت نشان می‌دهد.
+در مرحله بعد می‌توانیم دیتابیس آنلاین اضافه کنیم.
+*/
+
+document.getElementById("requestResult").innerHTML=
+`
+<p style="color:#176b3a;font-size:13px;line-height:1.8">
+✅ درخواست شما ثبت شد.
+<br>
+املاک صداقت پس از بررسی فایل‌های مناسب با شما تماس خواهد گرفت.
+</p>
+`;
+
+}
+
+
+/* شروع */
+
+loadProperties();
+
+</script>
+
+</body>
+</html>
